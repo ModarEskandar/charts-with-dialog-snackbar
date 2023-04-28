@@ -40,6 +40,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { TreeNestedComponent } from './tree-nested/tree-nested.component';
 import { AutoCompleteComponent } from './material/components/auto-complete/auto-complete.component';
@@ -84,6 +85,7 @@ const environmentConfig: any = environment.logger;
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
+    MatExpansionModule,
     LoggerModule.forRoot({
       level: NgxLoggerLevel[environmentConfig.level],
       serverLogLevel: NgxLoggerLevel[environmentConfig.serverLevel],

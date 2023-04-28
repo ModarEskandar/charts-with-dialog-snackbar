@@ -1,4 +1,59 @@
-<div class="block list text-right w-full" dir="rtl">
+<mat-expansion-panel
+  [expanded]="filterText !== ''"
+  [disabled]="parent.children.length === 0"
+  class="example-tree bg-transparent mat-elevation-z0"
+  dir="rtl"
+>
+  <mat-expansion-panel-header>
+    <mat-panel-title class="mat-tree-node">
+      <!-- <button mat-icon-button [attr.aria-label]="'Toggle ' + parent.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{ parent.children.length === 0 ? "remove icon" : "chevron_right" }}
+          </mat-icon>
+        </button> -->
+
+      <span
+        [innerHTML]="parent.name | highlight : filterText"
+        class="text-white"
+      ></span>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <app-tree-list
+    *ngFor="let child of parent.children | filterSidbarMenu : filterText"
+    [parent]="child"
+    [filterText]="filterText"
+  ></app-tree-list>
+</mat-expansion-panel>
+
+<!-- <div class="block list text-right w-full" dir="rtl">
+  <div class="mat-tree-node">
+    <button mat-icon-button [attr.aria-label]="'Toggle ' + parent.name">
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{ parent.children.length === 0 ? "remove icon" : "chevron_right" }}
+      </mat-icon>
+    </button>
+
+    <span [innerHTML]="parent.name | highlight : filterText"></span>
+  </div>
+  <div
+    [class.example-tree-invisible]="parent.children.length === 0"
+    class="mr-4"
+    role="group"
+  >
+    <app-tree-list
+      *ngFor="
+        let child of parent.children | filterSidbarMenu : filterText;
+        
+      "
+      [parent]="child"
+      [id]="id"
+      [filterText]="filterText"
+    ></app-tree-list>
+  </div>
+</div> -->
+
+<!-- <div class="block list text-right w-full" dir="rtl">
   <div class="mat-tree-node">
     <button mat-icon-button [attr.aria-label]="'Toggle ' + parent.name">
       <mat-icon class="mat-icon-rtl-mirror">
@@ -24,7 +79,7 @@
       [filterText]="filterText"
     ></app-tree-list>
   </div>
-</div>
+</div> -->
 <!-- <mat-tree>
   <mat-tree-node
     ><span

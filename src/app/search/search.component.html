@@ -62,7 +62,7 @@
     [displayFn]="displayFn"
   ></app-auto-complete>
 </div>
-<div>
+<mat-accordion dir="rtl" [multi]="filterText !== ''">
   <!-- <app-tree-list
     *ngFor="
       let root of searchList | filterSidbarMenu : filterText;
@@ -86,8 +86,6 @@
     "
     [parent]="root"
     [filterText]="filterText"
-    [id]="1"
     [index]="index + 1"
-    class="flex text-white"
   ></app-tree-list>
-</div>
+</mat-accordion>
