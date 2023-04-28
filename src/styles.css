@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo&family=Noto+Kufi+Arabic:wght@200;400;900&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-icon {
+    @apply text-dark-purple cursor-pointer hover:-translate-y-0.5 transform transition focus:ring focus:ring-offset-2;
+  }
+}
+* {
+  font-family: "Noto Kufi Arabic", Roboto, "Helvetica Neue", sans-serif;
+}
+html,
+body {
+  margin: 5;
+  padding: auto;
+  height: 100%;
+}
+.red-snackbar {
+  --mat-mdc-snack-bar-button-color: #ffffff;
+  --mdc-snackbar-supporting-text-color: #f23a2f;
+  --mdc-snackbar-container-color: #ffffff;
+  text-align: right;
+
+  justify-content: center;
+}
+.green-snackbar {
+  --mat-mdc-snack-bar-button-color: #ffffff;
+  --mdc-snackbar-supporting-text-color: #43a446;
+  --mdc-snackbar-container-color: #ffffff;
+  text-align: right;
+  justify-content: center;
+}
+:root {
+  --info: #48ddff;
+  --success: #53ff55;
+  --error: #ff3535;
+  --warning: #ffb62f;
+}
+.dialog {
+  position: relative;
+  margin: 10;
+  padding: 10;
+  --mdc-dialog-supporting-text-color: #ffffff;
+  text-align: center;
+}
+.info-dialog {
+  background-color: #48ddff;
+}
+.success-dialog {
+  background-color: #53ff55;
+}
+.error-dialog {
+  background-color: #ff3535;
+}
+.warning-dialog {
+  background-color: #ffb62f;
+}
+.dialog-icon {
+  position: absolute;
+  padding: 5px;
+  color: white;
+}
+.snackbar {
+  --mdc-snackbar-container-color: var(--info);
+  --mat-mdc-snack-bar-button-color: #22a22d;
+
+  --mdc-snack-bar-supporting-text-color: #8a0909;
+  text-align: center;
+}
+
+.info-snackbar {
+  position: relative;
+  --mdc-snackbar-container-color: var(--info);
+  text-align: center;
+}
+.success-snackbar {
+  text-align: center;
+  --mdc-snackbar-container-color: var(--success);
+}
+.error-snackbar {
+  text-align: center;
+  --mdc-snackbar-container-color: var(--error);
+}
+.warning-snackbar {
+  text-align: center;
+  --mdc-snackbar-container-color: var(--warning);
+}
+.snackbar-icon {
+  position: absolute;
+  top: -15;
+  padding: 5px;
+  color: white;
+}
+button {
+  margin: 5px;
+}
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+/*
+ * This padding sets alignment of the nested nodes.
+ */
+.example-tree .mat-nested-tree-node div[role="group"] {
+  padding-right: 40px;
+}
+
+/*
+ * Padding for leaf nodes.
+ * Leaf nodes need to have padding so as to align with other non-leaf nodes
+ * under the same parent.
+ */
+.example-tree div[role="group"] > .mat-tree-node {
+  padding-right: 40px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

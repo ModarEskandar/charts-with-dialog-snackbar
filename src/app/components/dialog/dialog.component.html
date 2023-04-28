@@ -1,0 +1,46 @@
+<div class=" {{ data.dialogType }}-dialog">
+  <div class="dialog-icon">
+    <button mat-fab color="{{ data.dialogType }}">
+      <mat-icon
+        class="text-gray-200"
+        fontIcon="{{ dialogTypeIcon[data.dialogType] }}"
+      ></mat-icon>
+    </button>
+  </div>
+  <h1 mat-dialog-title>{{ data.dialogType | uppercase }}</h1>
+  <div mat-dialog-content>
+    <p>{{ data.dialogMsg }}</p>
+  </div>
+  <div class="inline-flex">
+    <button
+      class="bg-gray-200 text-error hover:bg-gray-300 font-bold py-2 px-4 rounded-md inline-flex items-center"
+      (click)="onClose()"
+    >
+      <mat-icon>close</mat-icon>
+      <span>إغلاق</span>
+    </button>
+    <button
+      class="bg-gray-200 text-success hover:bg-gray-300 font-bold py-2 px-4 rounded-md inline-flex items-center"
+      [mat-dialog-close]="data"
+    >
+      <mat-icon>done</mat-icon>
+      <span>{{ data.action }}</span>
+    </button>
+  </div>
+  <!-- <div mat-dialog-actions>
+    <button
+      mat-raised-button
+      [class]="'btn btn-' + data.dialogType"
+      (click)="onClose()"
+    >
+      إغلاق
+    </button>
+    <button
+      mat-raised-button
+      [class]="'btn btn-' + data.dialogType"
+      [mat-dialog-close]="data"
+    >
+      {{ data.action }}
+    </button>
+  </div> -->
+</div>

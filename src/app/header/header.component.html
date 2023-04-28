@@ -1,0 +1,65 @@
+<div class="bg-light-white">
+  <nav>
+    <div class="m-8 py-4 grid grid-rows-2 grid-flow-col items-center gap-4">
+      <div
+        class="col-span-6 row-span-1 grid grid-cols-2 grid-flow-col text-right text-dark-purple"
+        *ngIf="isAuthenticated"
+      >
+        <div style="cursor: pointer" class="col-span-2" (click)="onLogout()">
+          تسجيل الخروج&nbsp;
+        </div>
+
+        <div class="col-span-4">{{ " | " + authedUser }}&nbsp; مرحباً</div>
+      </div>
+      <div class="col-span-6 row-span-1 text-right text-dark-purple">
+        {{ jobTitle }}
+      </div>
+      <div class="col-span-2 row-span-2">
+        <img
+          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+          width="40"
+          style="border-radius: 50%"
+        />
+      </div>
+      <div class="col-span-2 row-span-2">
+        <div>
+          <span class="relative flex h-2 w-2">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"
+            ></span>
+          </span>
+          <mat-icon class="nav-icon">notifications</mat-icon>
+        </div>
+      </div>
+      <div class="col-span-2 row-span-2">
+        <div>
+          <span class="relative flex h-2 w-2">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"
+            ></span>
+          </span>
+          <mat-icon class="nav-icon"> message</mat-icon>
+        </div>
+      </div>
+      <div class="col-span-8 row-span-2">
+        <div
+          class="flex items-center rounded-md bg-light-white focus-within:ring focus-within:ring-offset-2"
+        >
+          <mat-icon class="nav-icon text-2xl block mr-2">search</mat-icon>
+          <input
+            type="search"
+            placeholder="...بحث"
+            class="text-lg bg-transparent w-full text-dark-purple focus:outline-none text-right"
+            [(ngModel)]="filterChartsText"
+          />
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

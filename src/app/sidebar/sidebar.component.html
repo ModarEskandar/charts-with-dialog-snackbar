@@ -1,0 +1,52 @@
+<aside
+  class="z-40 bg-gradient-to-l from-dark-purple w-70 to-blue-500 fixed pt-8 right-0 top-0 h-screen p-4 items-center sm:block overflow-y-auto ease-in-out duration-300"
+  [ngClass]="!open ? 'translate-x-full   ' : ' translate-x-0 '"
+>
+  <div class="flex justify-center my-2">
+    <img src="../assets/photos/Group 2723@3x.png" width="150" class="" />
+  </div>
+  <hr />
+
+  <!-- <div class="inline-flex py-8">
+      <h1
+        class="text-white absolute right-0 text-2xl font-semibold"
+        [ngClass]="{ hidden: !open }"
+      >
+        {{ title }}
+      </h1>
+    </div> -->
+
+  <!-- <div class="flex items-center rounded-md bg-light-white my-6 px-4 py-2">
+    <mat-icon class="text-white text-lg block cursor-pointer mr-2"
+      >search</mat-icon
+    >
+    <input
+      type="search"
+      placeholder="...بحث"
+      class="text-base bg-transparent w-full text-white focus:outline-none text-right"
+      [(ngModel)]="filterText"
+      [formControl]="searchControl"
+    />
+  </div>
+  <app-auto-complete
+  [options]="investArr"
+    [filterText]="filterText"
+    [displayFn]="displayFn"
+  ></app-auto-complete> -->
+  <!-- <app-filter
+    [targetProp]="'name'"
+    [itemsList]="searchList"
+    [ngClass]="{ hidden: !open }"
+    class="duration-500"
+    (selectedFilterChanged)="onSelecteItemsFilterChanged($event)"
+  ></app-filter> -->
+  <!-- <app-sidebar-search
+      [filterText]="filterText"
+      [searchList]="filteredList"
+      [ngClass]="{ hidden: !open }"
+      class="duration-500"
+    ></app-sidebar-search> -->
+  <div>
+    <app-search></app-search>
+  </div>
+</aside>

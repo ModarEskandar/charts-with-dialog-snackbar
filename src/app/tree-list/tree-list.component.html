@@ -1,0 +1,45 @@
+<div class="block list text-right w-full" dir="rtl">
+  <div class="mat-tree-node">
+    <button mat-icon-button [attr.aria-label]="'Toggle ' + parent.name">
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{ parent.children.length === 0 ? "remove icon" : "chevron_right" }}
+      </mat-icon>
+    </button>
+
+    <span [innerHTML]="parent.name | highlight : filterText"></span>
+  </div>
+  <div
+    [class.example-tree-invisible]="parent.children.length === 0"
+    class="mr-4"
+    role="group"
+  >
+    <app-tree-list
+      *ngFor="
+        let child of parent.children | filterSidbarMenu : filterText;
+        let index = index
+      "
+      [parent]="child"
+      [id]="id"
+      [index]="index + 1"
+      [filterText]="filterText"
+    ></app-tree-list>
+  </div>
+</div>
+<!-- <mat-tree>
+  <mat-tree-node
+    ><span
+      [ngStyle]="{ 'font-style': 200 - 5 * id }"
+      [innerHTML]="parent.name | highlight : filterText"
+    ></span
+  ></mat-tree-node>
+  <app-tree-list
+    *ngFor="
+      let child of parent.children | filterSidbarMenu : filterText;
+      let index = index
+    "
+    [parent]="child"
+    [id]="id"
+    [index]="index + 1"
+    [filterText]="filterText"
+  ></app-tree-list>
+</mat-tree> -->

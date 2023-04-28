@@ -1,0 +1,20 @@
+<mat-form-field class="example-full-width" appearance="fill" dir="rtl">
+  <mat-label>بحث في التحقيقات</mat-label>
+
+  <mat-icon matSuffix class="text-dark-purple text-lg block cursor-pointer mr-2"
+    >search</mat-icon
+  >
+  <input
+    type="search"
+    placeholder="...بحث"
+    matInput
+    class="text-base bg-transparent w-full text-white focus:outline-none text-right"
+    [formControl]="searchControl"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{ option.name }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

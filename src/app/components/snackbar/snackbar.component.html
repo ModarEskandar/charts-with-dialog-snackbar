@@ -1,0 +1,45 @@
+<div>
+  <div class="snackbar-icon">
+    <button mat-mini-fab color="{{ data.snackBarType }}">
+      <mat-icon
+        class="text-gray-200"
+        fontIcon="{{ snackBarTypeIcon[data.snackBarType] }}"
+      ></mat-icon>
+    </button>
+  </div>
+  <h1 matSnackBarLabel>{{ data.snackBarType | uppercase }}</h1>
+  <div>
+    <p>
+      {{ data.message }}
+    </p>
+  </div>
+  <div class="inline-flex">
+    <button
+      class="bg-gray-200 text-error text-sm hover:bg-gray-300 py-2 px-4 rounded-md inline-flex items-center"
+      (click)="onDismiss()"
+    >
+      <mat-icon>close</mat-icon>
+      <span>إغلاق</span>
+    </button>
+    <button
+      class="bg-gray-200 text-success text-sm hover:bg-gray-300 py-2 px-4 rounded-md inline-flex items-center"
+      matSnackBarAction
+      *ngIf="data.action"
+      (click)="onAction()"
+    >
+      <mat-icon>done</mat-icon>
+      <span>{{ data.action }}</span>
+    </button>
+  </div>
+  <!-- <div matSnackBarActions>
+    <button mat-raised-button (click)="onDismiss()">إغلاق</button>
+    <button
+      mat-raised-button
+      matSnackBarAction
+      *ngIf="data.action"
+      (click)="onAction()"
+    >
+      {{ data.action }}
+    </button>
+  </div> -->
+</div>
