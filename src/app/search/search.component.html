@@ -55,16 +55,15 @@
     [(ngModel)]="filterText"
   />
 </div> -->
-<div class="my-4">
-  <div>
-    <app-auto-complete
-      (searchTextChangedEvent)="changeSearchText($event)"
-      [options]="investArr"
-      [displayFn]="displayFn"
-    ></app-auto-complete>
-  </div>
-  <div>
-    <!-- <app-tree-list
+<div>
+  <app-auto-complete
+    (searchTextChangedEvent)="changeSearchText($event)"
+    [options]="investArr"
+    [displayFn]="displayFn"
+  ></app-auto-complete>
+</div>
+<div>
+  <!-- <app-tree-list
     *ngFor="
       let root of searchList | filterSidbarMenu : filterText;
       let index = index
@@ -75,21 +74,20 @@
     [index]="index + 1"
     class="flex text-white"
   ></app-tree-list> -->
-    <!-- <app-tree-nested
+  <!-- <app-tree-nested
     [filterText]="filterText"
     [dataSource]="dataSource"
     [treeControl]="treeControl"
   ></app-tree-nested> -->
-    <app-tree-list
-      *ngFor="
-        let root of searchList | filterSidbarMenu : filterText;
-        let index = index
-      "
-      [parent]="root"
-      [filterText]="filterText"
-      [id]="1"
-      [index]="index + 1"
-      class="flex text-white"
-    ></app-tree-list>
-  </div>
+  <app-tree-list
+    *ngFor="
+      let root of searchList | filterSidbarMenu : filterText;
+      let index = index
+    "
+    [parent]="root"
+    [filterText]="filterText"
+    [id]="1"
+    [index]="index + 1"
+    class="flex text-white"
+  ></app-tree-list>
 </div>
