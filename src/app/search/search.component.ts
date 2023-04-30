@@ -93,7 +93,9 @@ export class SearchComponent implements OnInit {
       this.allItems = '';
       return this.buildSearchText(item, '', item.name);
     });
+    console.log(this.searchList);
   }
+
   buildSearchText(list: any, parentName: string, allItems: string) {
     if (list.children.length > 0) {
       for (let child of list.children) {
@@ -103,14 +105,15 @@ export class SearchComponent implements OnInit {
         // child.searchText = child.searchText + list.name;
         this.buildSearchText(child, child.parents, allItems);
       }
-      list.searchText = list.name + '@' + list.parents;
+      list.searchText = list.parents + '@' + list.name;
     } else {
       {
-        list.searchText = list.name + '@' + list.parents;
+        list.searchText = list.parents + '@' + list.name;
         allItems = allItems + list.name;
       }
     }
     if (!list.investParentId) list.searchText = list.name + '@' + this.allItems;
+    list.searchText = list.searchText + '@الجميع';
     return list;
   }
   changeSearchText(newSearchText: string) {

@@ -25,7 +25,7 @@ export class AutoCompleteComponent {
       map((value) => {
         const name = typeof value === 'string' ? value : value?.name;
         this.searchTextChangedEvent.emit(name);
-
+        if (name === 'الجميع') return this.options.slice();
         return name ? this._filter(name as string) : this.options.slice();
       })
     );
